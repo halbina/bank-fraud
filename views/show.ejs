@@ -1,0 +1,135 @@
+<% include  partials/header %>
+<% include partials/nav %>
+
+<div class="container">
+<div class="jumbotron">
+<!--<div class="main-content">-->
+<div class="col-sm-12 text-center">
+  <h2 class="second"> <%=title %></h2>
+</div><br />
+
+<table class="table table-bordered table-inverse table-hover  text-center">
+       <thead class="bg-primary">
+         <tr>
+           <th> ID </th>
+           <th> Username </th>
+           <th> City </th>
+           <th> State </th>
+           <th> Phone </th>
+           <th> Account Number </th>
+           <th> Balance </th> 
+           <th> SSN </th>
+           
+         </tr>
+       </thead>
+      
+      <tbody>
+         <tr>
+            <% for(var i=0; i<showAll.length; i++){%>
+              <td><%= showAll[i].id %></td>
+              <td><%= showAll[i].uid %></td>
+			        <td><%= showAll[i].city %></td>
+              <td><%= showAll[i].state %></td>
+              <td><%= showAll[i].phone %></td>
+              <td><%= showAll[i].accn %></td>
+              <td><%= showAll[i].balance %></td>
+              <td><%= showAll[i].ssn %></td>
+              
+              <td class="bg-warning"> <a href="/edit/<%= showAll[i].id %>"><i class="fa fa-pencil" aria-hidden="true"> Edit</i></a>
+              </td>
+              <td class="bg-danger" id="button"> <!--<button onclick="myFunction()">-->
+              <a href="/delete/<%= showAll[i].id %>" onclick="return confirm('Are you sure you want to delete?');"><i class="fa fa-trash"> Delete</i></a>
+              </td>
+          
+        </tr>
+  
+          <% } %>
+
+    
+    </tbody>
+
+  </table>
+
+
+  <div class="col-sm-12 text-center">
+  <h2 class="second"> <%=title1 %></h2>
+</div><br />
+<table class="table table-bordered table-inverse table-hover  text-center">
+       <thead class="bg-primary">
+         <tr>
+          <th> CID </th>
+           <th> Username </th>
+           <th> Account Number </th>
+           <th> Balance </th>
+           <th> Exp. Date </th>
+           <th> Limit </th>
+           <th> S-Code </th>           
+         </tr>
+       </thead>
+      
+      <tbody>
+         <tr>
+            <% for(var i=0; i<ccAll.length; i++){%>
+              <td><%= ccAll[i].id %></td>
+              <td><%= ccAll[i].uid %></td>
+              <td><%= ccAll[i].caccn %></td>
+        <td><%= ccAll[i].cbalance %></td>
+              <td><%= ccAll[i].exp %></td>
+              <td><%= ccAll[i].climit %></td>
+              <td><%= ccAll[i].scode %></td>
+              
+              <td class="bg-danger" id="button"> 
+              <a href="/deletecc/<%= ccAll[i].id %>" onclick="return confirm('Are you sure you want to delete?');"><i class="fa fa-trash"> Delete</i></a>
+              </td>
+          
+        </tr>
+  
+          <% } %>
+
+    
+    </tbody>
+
+  </table>
+  <div class="col-sm-12 text-center">
+  <h2 class="second"> <%=title2 %></h2>
+</div><br />
+<table class="table table-bordered table-inverse table-hover  text-center">
+       <thead class="bg-primary">
+         <tr>
+           <th> UID </th>
+           <th> Username </th>
+           <th> APR </th>
+           <th> Account Number </th>
+           <th> Balance </th>
+           <th> Loan Amount </th>
+                     
+         </tr>
+       </thead>
+      
+      <tbody>
+         <tr>
+            <% for(var i=0; i<uAll.length; i++){%>
+              <td><%= uAll[i].id %></td>
+              <td><%= uAll[i].uid %></td>
+              <td><%= uAll[i].apr %></td>
+              <td><%= uAll[i].laccn %></td>
+              <td><%= uAll[i].lbalance %></td>
+              <td><%= uAll[i].lamount %></td>
+              
+              
+              <td class="bg-danger" id="button"> 
+              <a href="/udelete/<%= uAll[i].id %>" onclick="return confirm('Are you sure you want to delete?');"><i class="fa fa-trash"> Delete</i></a>
+              </td>
+          
+        </tr>
+  
+          <% } %>
+
+    
+    </tbody>
+
+  </table>
+</div>
+</div>
+
+<% include  partials/footer %>

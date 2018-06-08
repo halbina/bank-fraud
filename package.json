@@ -1,0 +1,23 @@
+{
+  "name": "fraudd",
+  "version": "1.0.0",
+  "description": "fraud detection example",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "neo4j",
+    "neo4j-driver"
+  ],
+  "author": "Albina Hoti",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "*",
+    "d3": "^5.2.0",
+    "ejs": "^2.4.2",
+    "express": "*",
+    "morgan": "*",
+    "neo4j-driver": "*"
+  }
+}

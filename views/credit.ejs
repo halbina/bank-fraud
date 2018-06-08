@@ -1,0 +1,189 @@
+<% include  partials/header %>
+<% include partials/nav %>
+
+<div class="container">
+    <h1 class="primary col-sm-offset-2 col-sm-8 text-center"><%= title %></h1></br >
+</div>
+<div class="container col-sm-offset-2 col-sm-8">
+    <div class="jumbotron">
+       
+                
+                    <form class="form-horizontal" method ="POST" action="/addcc">
+                        <div class="row">
+                            <div class="form-group">
+                            <!--<div class="row"></div>--> 
+                        
+                        
+                        <div class="form-group">
+
+                            <label class="control-label col-sm-offset-2 col-sm-2">Account Number</label>
+                                <div class="col-sm-3">
+                                    <input type="number" class="form-control" name="caccn">
+                                </div>
+                                
+                        </div>
+
+                   
+                        <div class="form-group">
+                            <label class="control-label col-sm-offset-2 col-sm-2">Balance</label>
+                                <div class="col-sm-3">
+                                    <input type="number" class="form-control" name="cbalance">
+                                </div>
+                                
+                        </div>
+                          <div class="form-group">
+                            <label class="control-label col-sm-offset-2 col-sm-2">Exp. Date</label>
+                                <div class="col-sm-3">
+                                    <input type="date" class="form-control" name="exp">
+                                </div>
+                                
+                        </div>
+                          <div class="form-group">
+                            <label class="control-label col-sm-offset-2 col-sm-2">Limit</label>
+                                <div class="col-sm-3">
+                                    <input type="number" class="form-control" name="limit">
+                                </div>
+                                
+                        </div>
+                         <div class="form-group">
+                            <label class="control-label col-sm-offset-2 col-sm-2">Security Code</label>
+                                <div class="col-sm-3">
+                                    <input type="number" class="form-control" name="scode">
+                                </div>
+                                
+                        </div>
+                        <div class="form-group"> 
+                            <div class="row">
+                                <div class="col-sm-offset-4 col-sm-6">
+                                     <button type="submit" class="btn btn-primary target" id="target1"><i class="fa fa-paper-plane">  Send</i></button>
+                                </div>
+                            </div>
+                        </div>
+              </form>
+            </div>
+          </div>
+        </form>
+
+        <form class="form-horizontal" method ="POST" action="/ccrelation" action="/delccrel">
+            <h3>Create relation</h3>
+                        <div class="row">
+                           
+                      
+                            <div class="form-group">
+                            <label class="control-label col-sm-offset-2 col-sm-2">Username: </label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" name="uid">
+                                </div>
+                                
+                        </div>
+                          <div class="form-group">
+                            <label class="control-label col-sm-offset-2 col-sm-2">Credit AC</label>
+                                <div class="col-sm-3">
+                                    <input type="number" class="form-control" name="caccn">
+                                </div>
+                            </div>
+                        </div>
+                             <div class="form-group"> 
+                            <div class="row">
+                                <div class="col-sm-offset-4 col-sm-6">
+                                     <button type="submit" class="btn btn-primary target" id="target1"><i class="fa fa-paper-plane">  Add</i></button>
+                                
+                                     <button type="submit" class="btn btn-primary target" id="target1" formaction="/delccrel"><i class="fa fa-paper-plane">  Remove</i></button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                
+            </form>
+
+            <table class="table table-bordered table-inverse table-hover  text-center">
+       <thead class="bg-primary">
+         <tr>
+           <th> ID </th>
+           <th> Account Number </th>
+           <th> Balance </th>
+           <th> Expiration Date </th>
+           <th> Limit </th>
+           <th> Security Date </th>
+           
+           
+         </tr>
+       </thead>
+      
+      <tbody>
+         <tr>
+            <% for(var i=0; i<show.length; i++){%>
+              <td><%= show[i].id %></td>
+              <td><%= show[i].caccn %></td>
+              <td><%= show[i].balance %></td>
+              <td><%= show[i].exp %></td>
+              <td><%= show[i].limit %></td>
+              <td><%= show[i].scode %></td>
+              
+              
+              <td class="bg-warning"> <a href="/editCredit/<%= show[i].id %>"><i class="fa fa-pencil" aria-hidden="true"> Edit</i></a>
+              </td>
+             
+              </td>
+          
+        </tr>
+  
+          <% } %>
+
+    
+    </tbody>
+
+  </table>
+
+                        <!--<label class="control-label col-sm-offset-2 col-sm-2">Choose Username: </label>
+                        <select class="form-control col-sm-4" name="select_ac" id="sel1">
+                            <% for(var i=0; i < dropdownAC.length; i++) { %>
+                                
+                          
+                        <option <%=dropdownAC[i].uid ? "selected" : "" %> ><%= dropdownAC[i].uid %></option>
+                            <% } %>
+                        </select>
+                        <script type="text/javascript">
+                            var e = document.getElementById("sel1");
+                            var strUser = e.options[e.selectedIndex].value;
+                        </script>
+                      
+                        <label class="control-label col-sm-offset-2 col-sm-2">Choose CACCN </label>
+                        <select class="form-control col-sm-4" name="select_ac" id="sel2">
+                            <% for(var i=0; i < dropdownCC.length; i++) { %>
+                                
+                          
+                        <option <%=dropdownCC[i].caccn ? "selected" : ""  %> ><%= dropdownCC[i].caccn %></option>
+                            <% } %>
+                        </select>
+                        <script type="text/javascript">
+                            var e = document.getElementById("sel2");
+                            var strUser = e.options[e.selectedIndex].value;
+                        </script>
+                        
+                        <div class="form-group"> 
+                            <div class="row">
+                                <div class="col-sm-offset-4 col-sm-6">
+                                     <button type="submit" class="btn btn-primary target" id="target1"><i class="fa fa-paper-plane">  Add</i></button>
+                                </div>
+                            </div>
+                        </div>
+                    
+                
+            </form>-->
+
+
+
+
+                        
+                   
+        </div>
+    </div>
+    
+      </div>
+
+
+
+
+
+<% include  partials/footer %>

@@ -1,0 +1,42 @@
+<% include partials/header %>
+<% include partials/nav %>
+
+<div class="container">
+  <h1 class="primary col-sm-offset-2 col-sm-8 text-center">Link Analysis</h1></br >
+</div>
+<div class="container col-sm-offset-2 col-sm-8">
+    <div class="jumbotron">
+    
+	<div class="col-sm-12 text-center">
+  		<h2 class="second"><%=title%></h2>
+		</div><br />
+
+		<table class="table table-bordered table-inverse table-hover  text-center">
+       	<thead class="bg-primary">
+       		<tr>
+       			<th>FraudRing</th>
+       			<th>ContactType</th>
+       			<th>RingSize</th>
+       		</tr>
+       		</thead>
+
+       		<tbody>
+       			<tr>
+
+       			<% for(var i=0; i<query.length;i++){%>
+
+              		<td><%= query[i].fr %></td>
+              		<td><%= query[i].ct %></td>
+              		<td><%= query[i].rs %></td>
+
+       			</tr>
+       		
+       			   <% } %>
+       		</tbody>
+
+       	</table>
+       	</div>
+       	</div>
+
+
+<% include partials/footer %>

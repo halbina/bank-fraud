@@ -1,0 +1,134 @@
+<% include  partials/header %>
+<% include partials/nav %>
+
+<div class="container">
+    <h1 class="primary col-sm-offset-2 col-sm-8 text-center"><%= title %></h1></br >
+</div>
+<div class="container col-sm-offset-2 col-sm-8">
+    <div class="jumbotron">
+       
+                
+                    <form class="form-horizontal" method ="POST" action="/update/<%= doc._id %>">
+                        <div class="row">
+                            <div class="form-group">
+                            <div class="row">   
+                            <h4 class="col-sm-offset-1 col-sm-2">Personal Informations</h4>
+                        </div>
+                        
+                        <div class="form-group">
+
+                            <label class="control-label col-sm-offset-2 col-sm-2">First Name</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" name="fname">
+                                </div>
+                                
+                        </div>
+
+                   
+                        <div class="form-group">
+                            <label class="control-label col-sm-offset-2 col-sm-2">Last Name</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" name="lname">
+                                </div>
+                                
+                        </div>
+                          <div class="form-group">
+                            <label class="control-label col-sm-offset-2 col-sm-2">Username</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" name="uid">
+                                </div>
+                                
+                        </div>
+                          <div class="form-group">
+                            <label class="control-label col-sm-offset-2 col-sm-2">Phone Number</label>
+                                <div class="col-sm-3">
+                                    <input type="number" class="form-control" name="phone">
+                                </div>
+                                
+                        </div>
+                        <hr class="style1">
+
+                        <div class="row">
+                            <h4 class="col-sm-offset-1 col-sm-2">Address</h4>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-offset-2 col-sm-2">Street</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" name="street">
+                                </div>
+                                
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-offset-2 col-sm-2">City</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" name="city">
+                                </div>
+                                
+                        </div>
+                          <div class="form-group">
+                            <label class="control-label col-sm-offset-2 col-sm-2">State</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" name="state">
+                                </div>
+                                
+                        </div>
+                          <div class="form-group">
+                            <label class="control-label col-sm-offset-2 col-sm-2">ZipCode</label>
+                                <div class="col-sm-3">
+                                    <input type="number" class="form-control" name="zipcode">
+                                </div>
+                                
+                        </div>
+        
+                        
+                        <hr class="style1">
+
+
+                        <div class="row">
+                            <h4 class="col-sm-offset-1 col-sm-2">Account</h4>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-offset-2 col-sm-2">Account Number</label>
+                                <div class="col-sm-3">
+                                    <input type="number" class="form-control" name="accn">
+                                </div>
+                              
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-offset-2 col-sm-2">Balance</label>
+                                <div class="col-sm-3">
+                                    <input type="number" class="form-control" name="balance">
+                                </div>
+                                
+                        </div>
+                            <div class="form-group">
+                            <label class="control-label col-sm-offset-2 col-sm-2">SSN</label>
+                                <div class="col-sm-3">
+                                    <input type="number" class="form-control" name="ssn">
+                                </div>
+                                
+                        </div>
+
+                        <div class="form-group"> 
+                            <div class="row">
+                            	 <div class="col-sm-offset-4 col-sm-6">
+                                     <button type="submit" class="btn btn-primary target" id="target1"><i class="fa fa-paper-plane">  Save</i></button>
+                                
+                                   
+                                </div>
+                        </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
+
+
+<!--include footer-->
+<% include  partials/footer %>
